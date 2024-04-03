@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 160px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .form-group input,  
+        .form-group select,
+        .error-message {
+            display: inline-block;
+        }
+        .error-message {
+            color: red;
+            margin-left: 10px;
+        }
+        .warning-message {
+            color: yellow;
+        }
+        .validation-message span {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="getinfo">
+        <!-- Div for the username -->
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+        </div>
+
+        <!-- Div for the email -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+        </div>
+
+        <!-- Div for the phone number -->
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber">
+        </div>
+
+        <!-- Div for the password -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        
+        <!-- Div for the confirmed password -->
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+        </div>
+
+        <!-- Div for the gender -->
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">Male
+            <input type="radio" id="female" name="gender" value="female">Female        
+            <input type="radio" id="other" name="gender" value="other">Other
+        </div>
+
+        <!-- Div for the age -->
+        <div class="form-group">
+            <label>Age:</label>
+            <select id="age">
+                <option value="i"></option>
+                <option value="ii">&lt;21 years old</option>
+                <option value="iii">21 - 25 years old</option>
+                <option value="iv">26 - 35 years old</option>
+                <option value="v">36 - 50 years old</option>
+                <option value="vi">&gt;50 years old</option> 
+            </select>
+        </div>
+
+        <!-- Div for the music genre -->
+        <div class="form-group">
+            <label>Favorite Genre:</label>
+            <input type="checkbox" name="genre" value="pop">Pop
+            <input type="checkbox" name="genre" value="hipHop">Hiphop
+            <input type="checkbox" name="genre" value="jazz">Jazz
+            <input type="checkbox" name="genre" value="Rock">Rock
+            <input type="checkbox" name="genre" value="classicalMusic">Classical Music
+            <input type="checkbox" name="genre" value="country">Country
+        </div>
+
+        <!-- Div for the submit and clear button -->
+        <div class="form-group">
+            <label for="submit" style="float: left;">&nbsp;</label>
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="button" value="Clear" onclick="clearForm()">
+            </div>
+        </div>
+
+    </form>
+
+    <div id="message-output"></div>
+
+    <!-- Print the list of error messeges under the submit and clear buttons -->
+    <div class="validation-messages">
+        <ul id="error-list">
+            <li id="username-error" class="error-message"></li>
+            <li id="email-error" class="error-message"></li>
+            <li id="phone-error" class="error-message"></li>
+            <li id="password-error" class="error-message"></li>
+            <li id="confirm-password-error" class="error-message"></li>
+            <li id="gender-error" class="error-message"></li>
+            <li id="age-error" class="error-message"></li>
+            <li id="genre-error" class="error-message"></li>
+        </ul>
+    </div>
+
+    <!-- Pulls information needed from the js file -->
+    <script src="validation.js"></script>
+</body>
+</html>

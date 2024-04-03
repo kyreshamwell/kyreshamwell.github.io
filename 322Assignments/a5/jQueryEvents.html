@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        span.image-container {
+            display: inline-grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: auto auto; 
+            gap: 0; 
+        }
+        
+        span.image-container img {
+            height: 100px; 
+            width: auto; 
+            object-fit: cover; 
+        }
+    </style>
+           
+</head>
+<body>
+
+    <span class="image-container">
+        <img src="icons/facebook.png" alt="facebook icon" id="Facebook">
+        <img src="icons/insta.jpeg" alt="instagram icon" id="Instagram">
+        <img src="icons/linkedin.jpeg" alt="linkedin icon" id="Linkedin">
+        <img src="icons/reddit.jpeg" alt="reddit icon" id="Reddit">
+        <img src="icons/twitter.png" alt="twitter icon" id="Twitter">
+        <img src="icons/yt.png" alt="youtube icon" id="Youtube">
+    </span>
+    <p id="mouseIn">i. In: </p>
+    <p id="mouseOut">ii. Out: </p>
+    <p id="mouseCoordinates">iii. Mouse X:, Y:</p>
+    <div id="cloneContainer"></div>
+
+    <script>
+        let currentImageId = null;
+        let alreadyclickedTimeout;
+    
+        $('.image-container img').on({
+            mouseenter: function() {
+                $('#mouseIn').text('i. In: ' + this.id);
+                $(this).css('opacity', '0.5');
+            },
+            mouseleave: function() {
+                $('#mouseOut').text('ii. Out: ' + this.id);
+                $(this).css('opacity', '1.0');
+            }
+        });
+    
+        $('.image-container img').on('click', function() {
+            var $image = $(this);
+            var imageId = $image.attr('id');
+    
+            // Double click detected
+            if ($image.data('alreadyclicked')) {
+                clearTimeout(alreadyclickedTimeout);
+                $image.data('alreadyclicked', false);
+    
+                var urlMap = {
+                    'Facebook': 'https://www.facebook.com',
+                    'Instagram': 'https://www.instagram.com',
+                    'Linkedin': 'https://www.linkedin.com',
+                    'Reddit': 'https://www.reddit.com',
+                    'Twitter': 'https://www.twitter.com',
+                    'Youtube': 'https://www.youtube.com'
+                };
+    
+                window.open(urlMap[imageId], '_blank');
+            } else {
+                // First click detected, start timer for double click
+                $image.data('alreadyclicked', true);
+                alreadyclickedTimeout = setTimeout(function() {
+                    $image.data('alreadyclicked', false);
+    
+                    // If the image clicked is the same as the currently displayed one, toggle it.
+                    if (currentImageId === imageId) {
+                        $('#cloneContainer').empty();
+                        currentImageId = null;
+                    } else {
+                        // Display the clicked image
+                        var $clone = $image.clone().css({
+                            width: '400px',
+                            opacity: '1.0'
+                        });
+                        $('#cloneContainer').empty().append($clone);
+                        currentImageId = imageId;
+                    }
+                }, 300); // Set double click detection delay here
+            }
+    
+            return false; // Prevent default action
+        });
+    
+        $(document).on('mousemove', function(event) {
+            $('#mouseCoordinates').text('iii. Mouse X: ' + event.pageX + ', Y: ' + event.pageY);
+        });
+    </script>
+    
+</body>
+</html>
