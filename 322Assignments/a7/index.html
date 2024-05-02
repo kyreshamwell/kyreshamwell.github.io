@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Assignment 7</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="app.js"></script> 
+    </head>
+<body>
+    <button id="getRequest">Get</button>
+    <button id="putRequest">Put</button>
+    <button id="postRequest">Post</button>
+    <button id="deleteRequest">Delete</button>
+    <div id="result"></div>
+
+    <script>
+        // GET
+         $(document).ready(function() {
+            
+            // GET
+            $('#getRequest').click(function() {
+                $.ajax({
+                    url: '/grade',
+                    type: 'GET',
+                    success: function(result) {
+                        $('#result').html(result);
+                    },
+                    error: function(err) {
+                        $('#result').html('Error: ' + err.statusText);
+                    }
+                });
+            });
+
+            // PUT
+            $('#putRequest').click(function() {
+                $.ajax({
+                    url: '/grade',
+                    type: 'PUT',
+                    success: function(result) {
+                        $('#result').html(result);
+                    },
+                    error: function(err) {
+                        $('#result').html('Error: ' + err.statusText);
+                    }
+                });
+            });
+            
+            // POST
+            $('#postRequest').click(function() {
+                $.ajax({
+                    url: '/grade',
+                    type: 'POST',
+                    success: function(result) {
+                        $('#result').html(result);
+                    },
+                    error: function(err) {
+                        $('#result').html('Error: ' + err.statusText);
+                    }
+                });
+            });
+            
+            // DELETE
+            $('#deleteRequest').click(function() {
+                $.ajax({
+                    url: '/grade',
+                    type: 'DELETE',
+                    success: function(result) {
+                        $('#result').html(result);
+                    },
+                    error: function(err) {
+                        $('#result').html('Error: ' + err.statusText);
+                    }
+                });
+            });
+         }); 
+    </script>
+</body>
+</html>
