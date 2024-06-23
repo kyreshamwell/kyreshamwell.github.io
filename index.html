@@ -1,53 +1,99 @@
+index.html 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyre Shamwell's Portfolio</title>
     <style>
-        h1 {
-            text-align: center;
+        body {
+            font-family: 'Verdana', sans-serif; /* Different but clean font */
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
         }
-
-        .content-row {
+        header {
             display: flex;
-        }
-
-        .half-width {
-            width: 50%;
-        }
-
-        .text, .image {
-            width: 100%;
-        }
-
-        .image {
-            display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text color */
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            color: #333;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center; /* Center align the text */
+        }
+        .photo-box {
+            margin-bottom: 20px;
+        }
+        .photo-box img {
+            max-width: 200px; /* Increased size */
+            border-radius: 10px; /* Box-like format without border */
+        }
+        footer {
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome</h1>
-    <hr>
-    <h2 style="text-decoration: underline;">Mini Bio</h2>
-    <div class="content-row">
-        <div class="half-width text">
-            <p>Hello, my name is Kyre Shamwell. I am a rising senior at North Carolina Agricultural and Technical State University, majoring in Computer Science with a GPA of 3.2. I have made the Dean's List three times during my college tenure. I have been part of a co-op at Collins Aerospace from January 2023 to December 2023, working on the Digital Technology team, and I will return to Collins in the summer of 2024 for a Software Engineer internship.
-            During my year at Collins, I developed skills in teamwork, time management, and problem-solving. These skills were honed as I collaborated with various teams to resolve IT problems while balancing my full-time studies. Additionally, I am actively involved in the National Society of Black Engineers (NSBE) and the Association for Computing Machinery (ACM), and I have participated in a hackathon.
-            On the personal project front, I have built a gaming PC and worked on enhancing my technical portfolio by uploading assignments and projects. This hands-on experience has furthered my understanding of practical and theoretical computer science.
+    <header>
+        <h1>Kyre Shamwell</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#resume">Resume</a>
+            <a href="#linkedin">LinkedIn</a>
+            <a href="project_page.html">Class Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="photo-box">
+            <img src="./Personal-Photo.jpeg" alt="Kyre Shamwell">
+        </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hey, I'm Kyre Shamwell, a senior Computer Science major attending North Carolina
+                Agricultural and Technical State University. I've had the opportunity to gain
+                practical experience through a co-op and an internship with Collins Aerospace.
+                During my co-op, I worked on the Digital Technology team, where I was responsible
+                for migrating file shares to a new data security platform and helping resolve
+                end-users' data security solution needs. My time at Collins Aerospace helped me
+                develop several key skills, including teamwork, time management, and problem-solving.
+                These skills were honed as I collaborated with various team members to resolve IT
+                problems while balancing my full-time studies. In my software engineering internship,
+                I worked on updating legacy Python 2 code. My task involved modifying the code so
+                that tests, which were previously run on a GUI and pushed outputs, now run fully
+                from the command line using Python 3. Additionally, I am actively involved in the
+                National Society of Black Engineers (NSBE) and the Association for Computing Machinery
+                (ACM), where I engage with a network of professionals, participate in events and activities,
+                and contribute to a community of computing enthusiasts. This experience and involvement have
+                prepared me well for a future career in computer science and technology.
             </p>
-        </div>
-        <div class="half-width image">
-            <img src="./personal.jpeg" alt="Kyre's Photo" style="width: 25%;">
-        </div>
+    
     </div>
 
-    <h2 style="text-decoration: underline;">Class Assignments</h2>
-    <ul>
-        <li><a href="https://github.com/KyreMichael/IntroComputerPrograming" target="_blank">Intro to Computer Programing Code Files</a></li>
-        <li><a href="https://github.com/KyreMichael/ComputerProgramDesign" target="_blank">Computer Progam Design Code Files</a></li>
-        <li><a href="https://github.com/KyreMichael/KyreMichael.github.io" target="_blank">Internet Systems Code Files</a></li>
-        <li><a href="codeProduct.html">Internet Systems Webpage Assignemnts</a></li>
-        
-    </ul>
 </body>
 </html>
