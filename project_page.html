@@ -6,9 +6,9 @@
     <title>Kyre Shamwell's Projects</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif; /* Different but clean font */
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text color */
+            font-family: 'Verdana', sans-serif;
+            background-color: #ffffff;
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,28 +17,33 @@
             align-items: center;
             min-height: 100vh;
         }
+    
         header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text color */
+            background-color: #ffffff;
+            color: #333;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+    
         nav {
             display: flex;
         }
+    
         nav a {
             color: #333;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
+    
         nav a:hover {
             text-decoration: underline;
         }
+    
         .container {
             display: flex;
             gap: 20px;
@@ -46,8 +51,9 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            flex: 1; /* Make sure the container takes the remaining vertical space */
+            flex: 1;
         }
+    
         .project-card {
             background-color: #fff;
             border-radius: 8px;
@@ -60,13 +66,16 @@
             flex-direction: column;
             justify-content: space-between;
         }
+    
         .project-card h3 {
             margin: 15px 0;
         }
+    
         .project-card p {
             padding: 0 20px;
             color: #666;
         }
+    
         .project-card .btn {
             display: inline-block;
             margin: 20px;
@@ -77,13 +86,16 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+    
         .project-card .btn:hover {
             background-color: #0056b3;
         }
+    
         .project-card:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+    
         footer {
             width: 100%;
             background-color: #ffffff;
@@ -91,7 +103,46 @@
             text-align: center;
             padding: 10px 0;
         }
+    
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+    
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+    
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+    
+            .project-card {
+                width: 100%; /* Make cards full width on smaller screens */
+                max-width: 100%;
+            }
+    
+            .project-card h3 {
+                font-size: 1.2rem;
+            }
+    
+            .project-card p {
+                font-size: 1rem;
+            }
+    
+            .project-card .btn {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
     </style>
+    
 </head>
 <body>
     <header>

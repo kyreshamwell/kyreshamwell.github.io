@@ -6,33 +6,41 @@
     <title>Kyre Shamwell's Portfolio</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif; /* Different but clean font */
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text color */
+            font-family: 'Verdana', sans-serif;
+            background-color: #ffffff;
+            color: #333;
             margin: 0;
             padding: 0;
         }
+        
         header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text color */
+            background-color: #ffffff;
+            color: #333;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        
         nav {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
         }
+        
         nav a {
             color: #333;
-            margin: 0 15px;
+            margin: 10px;
             text-decoration: none;
             font-weight: bold;
         }
+        
         nav a:hover {
             text-decoration: underline;
         }
+        
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -40,19 +48,53 @@
             background-color: #fff;
             text-align: center; /* Center align the text */
         }
+        
         .photo-box {
             margin-bottom: 20px;
+            text-align: center; /* Center the photo */
         }
+        
         .photo-box img {
-            max-width: 200px; /* Increased size */
-            border-radius: 10px; /* Box-like format without border */
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
         }
+        
         footer {
             background-color: #ffffff;
             color: #333;
             text-align: center;
             padding: 10px 0;
         }
+        
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .photo-box img {
+                max-width: 150px; /* Reduce image size for smaller screens */
+            }
+        
+            h1, h2 {
+                font-size: 1.5rem; /* Reduce heading sizes for smaller screens */
+            }
+        
+            p {
+                font-size: 1rem;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -61,9 +103,8 @@
         <nav>
             <a href="#about">About Me</a>
             <a href="Kyre_Shamwell_Resume.pdf" target= "_blank">Resume</a>
-            <a href="https://www.linkedin.com/in/kyre-shamwell2002/" target="_blank" >LinkedIn</a>
+            <a href="https://www.linkedin.com/in/kyre-shamwell2002/" target="_blank">LinkedIn</a>
             <a href="project_page.html">Class Projects</a>
-            <!-- <a href="#contact">Contact</a> -->
         </nav>
     </header>
     <div class="container">
@@ -103,8 +144,7 @@
                 computing enthusiasts. This experience and involvement have prepared me well for a 
                 future career in computer science and technology.
             </p>
-    
+        </section>
     </div>
-
 </body>
 </html>
