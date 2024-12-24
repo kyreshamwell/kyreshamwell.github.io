@@ -64,21 +64,14 @@
             margin-left: 10px;
         }
     
-        /* Media Queries for smaller screens */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start; /* Align items on smaller screens */
-            }
-    
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-top: 10px;
-            }
-    
-            .content {
-                padding: 10px;
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack items on small screens */
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Side-by-side layout on larger screens */
             }
         }
         

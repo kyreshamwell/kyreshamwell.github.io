@@ -151,6 +151,16 @@
             transform: scale(1.1); /* Slight zoom on hover */
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
         }
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack items on small screens */
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Side-by-side layout on larger screens */
+            }
+        }
     </style>
 </head>
 <body>
