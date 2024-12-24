@@ -157,9 +157,19 @@
         }
         
         @media (max-width: 768px) {
-            nav {
-                padding: 10px 5px; /* Smaller padding on mobile */
-                font-size: 16px; /* Smaller font size for links */
+            #home, #about, #projects {
+                min-height: auto; /* Remove minimum height constraints */
+                padding: 20px; /* Adjust padding for smaller screens */
+                display: block; /* Stack sections vertically without flex properties */
+            }
+        
+            #about, #projects {
+                margin-top: 30px; /* Ensure there is space between sections */
+            }
+        
+            .project-card {
+                width: 100%; /* Make project cards take full width on smaller screens */
+                padding: 10px;
             }
         }
     </style>
