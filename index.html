@@ -3,148 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyre Shamwell's Portfolio</title>
+    <title>Kyre's Portfolio</title>
+    <link rel="icon" href="icon.jpeg">
     <style>
+        /* General Body Styling */
         body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #ffffff;
-            color: #333;
+            background-color: rgb(9, 66, 87); /* Dark blue background */
+            color: antiquewhite; /* Light text for contrast */
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
-        
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #ffffff;
-            color: #333;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
+
+        /* Navigation Bar */
         nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 10px;
+            position: fixed; /* Keep navigation fixed at the top */
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px 20px;
+            text-align: center;
+            z-index: 1000; /* Ensure it stays on top */
         }
-        
+
         nav a {
-            color: #333;
-            margin: 10px;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            margin: 0 15px;
+            font-size: 18px;
         }
-        
+
         nav a:hover {
             text-decoration: underline;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            text-align: center; /* Center align the text */
+
+        /* Home Section */
+        #home {
+            height: calc(100vh - 50px); /* Full viewport height minus nav height */
+            display: flex;
+            justify-content: space-between; /* Place text on the left and image on the right */
+            align-items: center;
+            padding: 80px 20px; /* Add padding to avoid overlap with navbar */
+            box-sizing: border-box;
         }
-        
-        .photo-box {
-            margin-bottom: 20px;
-            text-align: center; /* Center the photo */
+
+        #home .intro-text {
+            max-width: 50%; /* Restrict text area width */
         }
-        
-        .photo-box img {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 10px;
+
+        #home .headshot {
+            max-width: 400px; /* Limit size of the headshot */
+            border-radius: 10px; /* Optional: Add rounded corners */
         }
-        
-        footer {
-            background-color: #ffffff;
-            color: #333;
+
+        /* About Section */
+        #about {
+            height: calc(100vh - 50px); /* Full viewport height minus nav height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            padding: 20px; /* Add padding for spacing */
+            box-sizing: border-box;
+            text-align: center; /* Center text alignment */
+        }
+
+        #about p {
+            max-width: 800px; /* Limit content width for better readability */
+            margin: 10px 0; /* Add spacing between paragraphs */
+        }
+
+        /* Projects Section */
+        #projects {
+            min-height: 100vh; /* Full viewport height */
+            display: flex; /* Use Flexbox for alignment */
+            flex-wrap: wrap; /* Allow wrapping to the next row */
+            justify-content: center; /* Center the cards horizontally */
+            align-items: center; /* Center cards vertically */
+            gap: 20px; /* Add space between the cards */
+            padding: 100px 20px; /* Add padding around the container */
+            box-sizing: border-box;
+        }
+
+        /* Project Card Styling */
+        .project-card {
+            background-color: antiquewhite; /* Maintain your preferred card color */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            width: 300px; /* Fixed width for consistency */
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        /* Media Queries for smaller screens */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px;
-            }
-            
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .container {
-                padding: 10px;
-            }
-            
-            .photo-box img {
-                max-width: 150px; /* Reduce image size for smaller screens */
-            }
-        
-            h1, h2 {
-                font-size: 1.5rem; /* Reduce heading sizes for smaller screens */
-            }
-        
-            p {
-                font-size: 1rem;
-            }
+
+        .project-card h3 {
+            margin: 15px 0;
+            color: #000; /* Black for header contrast */
         }
-        
+
+        .project-card p {
+            padding: 0 20px;
+            color: #666; /* Light gray for description */
+        }
+
+        /* Button Styling */
+        .project-card .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ccc; /* Light gray background */
+            color: #007bff; /* Blue text for the link */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .project-card .btn:hover {
+            background-color: #bbb; /* Slightly darker gray on hover */
+        }
+
+        .project-card:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        /* Social Icons Styling */
+        .social-icons {
+            margin-top: 10px;
+            display: flex; /* Align icons horizontally */
+            gap: 15px; /* Add space between icons */
+        }
+
+        .social-icons a img {
+            width: 50px; /* Set fixed size for icons */
+            height: 50px;
+            border: 2px solid antiquewhite; /* Add a border around each icon */
+            padding: 5px; /* Add inner spacing */
+            background-color: rgba(255, 255, 255, 0.1); /* Optional semi-transparent background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+            transition: transform 0.3s ease; /* Smooth hover scaling effect */
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Kyre Shamwell</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="KyreShamwell_Resume.pdf" target= "_blank">Resume</a>
-            <a href="https://www.linkedin.com/in/kyre-shamwell2002/" target="_blank">LinkedIn</a>
-            <a href="project_page.html">Class Projects</a>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="photo-box">
-            <img src="./KyreHeadShot.jpg" alt="Kyre Shamwell">
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="KyreShamwell_Resume.pdf">Resume</a>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="main-content" id="home">
+        <div class="intro-text">
+            <h1>Hello, <br>I'm Kyre Shamwell</h1>
+            <p>I'm a senior computer science student at North Carolina Agricultural and Technical State University.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kyre-shamwell2002/" target="_blank" aria-label="LinkedIn">
+                    <img src="./imgs/in.jpg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/KyreMichael" target="_blank" aria-label="GitHub">
+                    <img src="./imgs/git.jpg" alt="GitHub">
+                </a>
+            </div>
         </div>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello, I'm Kyre Shamwell, a senior Computer Science major attending 
-                North Carolina Agricultural and Technical State University. I've 
-                had the opportunity to gain practical experience through a co-op 
-                and an internship with Collins Aerospace. During my co-op, I 
-                worked on the Digital Technology team, where I was responsible 
-                for migrating file shares to a new data security platform and helping 
-                resolve end-users' data security solution needs. Working at Collins Aerospace 
-                throughout 2023 helped me develop several key skills, including teamwork, 
-                time management, and problem-solving. I honed these skills by collaborating 
-                with various team members to resolve IT problems while balancing my full-time studies.
-            </p>
-
-            <p>During my software engineering internship, I was responsible for 
-                migrating legacy Python 2 code to Python 3. This involved modifying 
-                existing tests and implementing an HTML-based test output system, which 
-                allowed tests to be run independently of a GUI. I also converted GUI-based 
-                tests to Python 3, enabling them to be executed via the command line with 
-                results logged to a text file. Additionally, I developed an HTML interface 
-                using a Python localhost server to format and display test outputs with the 
-                help of JavaScript. I tested the updated Python 3 scripts on Airborne Flight 
-                Display (AFD) and Fomax devices to ensure their functionality and reliability. 
-                To finalize the process, I committed the Python 3 modifications to GitLab using 
-                a Linux server and documented all changes in AsciiDoc.
-            </p>
-
-            <p>Additionally, I am actively involved in the National Society of Black Engineers (NSBE) 
-                and the Association for Computing Machinery (ACM), where I engage with a network of 
-                professionals, participate in events and activities, and contribute to a community of 
-                computing enthusiasts. This experience and involvement have prepared me well for a 
-                future career in computer science and technology.
-            </p>
-        </section>
+        <img src="./imgs/KyreHeadShot.jpg" alt="Kyre Shamwell Headshot" class="headshot">
     </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <h1>About Me</h1>
+        <p>
+            Throughout my four years at North Carolina A&T State University, I have gained numerous skills that I can carry into my career. I developed proficiency in programming languages such as Python, Java, C++, HTML, JavaScript, CSS, and SQL. Additionally, I completed courses in artificial intelligence and machine learning, earning a certification in generative AI. 
+        </p>
+        <p>
+            While at A&T, I became an active member of ACM and NSBE, where I had the opportunity to network with peers and professionals, participate in hackathons, and engage in various events and activities. I am also honored to be a TMCF (Thurgood Marshall College Fund) Scholar and an ELC (Executive Leadership Council) Scholar, collectively receiving over $20,000 in scholarship funds.
+        </p>
+        <p>
+            My professional experiences have been equally rewarding. I received two offers from Collins Aerospace. The first was a fully remote co-op position on the Digital Technology Cloud and Automation team in 2023. In this role, I migrated file shares to a new data security platform and assisted end users with data security solutions. This experience helped me strengthen skills in teamwork, time management, and problem-solving, as I collaborated with team members to address IT challenges while balancing full-time studies.
+        </p>
+        <p>
+            After the co-op, I secured a software engineering internship at Collins Aerospace. My primary responsibility was migrating legacy Python 2 code to Python 3, which included modifying tests and creating an HTML-based test output system that allowed tests to run independently of a GUI. I converted GUI-based tests to Python 3 for command-line execution, logging results to text files. Additionally, I designed an HTML interface using a Python localhost server and JavaScript to display formatted test outputs. I tested the updated Python 3 scripts on Airborne Flight Display (AFD) and FOMAX devices, ensuring their functionality and reliability. Finally, I committed Python 3 modifications to GitLab using a Linux server and documented the process in AsciiDoc.
+        </p>
+        <p>
+            Throughout my time at A&T, I maintained a GPA above 3.0 and achieved Dean’s List honors once during each academic year (freshman, sophomore, junior, and senior years). These accomplishments, coupled with the invaluable experiences and skills I’ve gained, have shaped me into a capable and motivated professional ready to contribute meaningfully in my future career.
+        </p>
+    </div>
+
+    <div id="projects">
+        <div class="project-card">
+            <h3>Intro to Computer Programming</h3>
+            <p>Code files for the introductory course on computer programming.</p>
+            <a href="https://github.com/KyreMichael/IntroComputerPrograming" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Computer Program Design</h3>
+            <p>Code files for the computer program design course.</p>
+            <a href="https://github.com/KyreMichael/ComputerProgramDesign" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Internet Systems</h3>
+            <p>Code files for the internet systems course.</p>
+            <a href="https://github.com/KyreMichael/InternetSystems" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Assignments Working Outputs</h3>
+            <p>Working outputs of assignments 1 - 5 from my internet systems class showcasing front-end skills.</p>
+            <a href="working-outputs.html" target="_blank" class="btn">View Outputs</a>
+        </div>    
+    </div>
+    <script>
+        // Prevent scrolling to #about on page refresh
+        window.addEventListener("load", () => {
+            if (window.location.hash) {
+                // Check if the hash is #about and reset to the top
+                if (window.location.hash === "#about") {
+                    window.history.replaceState(null, null, " "); // Clear the hash
+                    window.scrollTo(0, 0); // Scroll to the top
+                }
+            }
+        });
+    </script>
 </body>
 </html>

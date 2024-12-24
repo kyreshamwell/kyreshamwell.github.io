@@ -6,35 +6,31 @@
     <title>Working Outputs</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #ffffff;
-            color: #333;
+            background-color: rgb(9, 66, 87); /* Dark blue background */
+            color: antiquewhite; /* Light text for contrast */
             margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
-    
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            color: #333;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    
+        
+        /* Navigation Bar */
         nav {
-            display: flex;
+            position: fixed; /* Keep navigation fixed at the top */
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px 20px;
+            text-align: center;
+            z-index: 1000; /* Ensure it stays on top */
         }
-    
+        
         nav a {
-            color: #333;
-            margin: 0 15px;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            margin: 0 15px;
+            font-size: 18px;
         }
-    
+        
         nav a:hover {
             text-decoration: underline;
         }
@@ -85,20 +81,17 @@
                 padding: 10px;
             }
         }
+        
     </style>
     
 </head>
 <body>
-    <header>
-        <h1>Kyre Shamwell</h1>
-        <nav>
-            <a href="index.html#about">About Me</a>
-            <a href="KyreShamwell_Resume.pdf" target= "_blank">Resume</a>
-            <a href="https://www.linkedin.com/in/kyre-shamwell2002/" target="_blank" >LinkedIn</a>
-            <a href="project_page.html">Class Projects</a>
-            <!-- <a href="index.html#contact">Contact</a> -->
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="#resume">Resume</a>
+    </nav>
     <div class="content">
         <h2>Working Outputs</h2>
         <p>These are the outputs of assignments 1 - 5 that showcase my front-end development skills:</p>
