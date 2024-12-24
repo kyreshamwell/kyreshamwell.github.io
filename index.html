@@ -53,6 +53,8 @@
     
         #home .headshot {
             max-width: 400px; /* Limit size of the headshot */
+            width: 100;
+            height: auto;
             border-radius: 10px; /* Optional: Add rounded corners */
         }
     
@@ -167,6 +169,10 @@
             #home {
                 flex-direction: column; /* Stack the text and image vertically */
                 align-items: center; /* Center-align items */
+            }
+            #home .headshot {
+                max-width: 90%; /* Allow the image to take up to 90% of the screen width */
+                margin-top: 20px; /* Add some space above the image when stacked */
             }
         
             #home .intro-text, #home .headshot {
