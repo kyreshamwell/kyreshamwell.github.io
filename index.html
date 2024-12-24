@@ -159,20 +159,20 @@
         }
         
         @media (max-width: 768px) {
-            /* Reduce padding and margin on all sections to better fit mobile screens */
+            /* Reset the heights and adjust padding for better content fit */
             #home, #about, #projects {
-                padding: 20px 10px;
-                margin-top: 20px; /* Add more space at the top of each section */
+                height: auto; /* Remove fixed heights to allow content to determine the space */
+                padding: 20px; /* Consistent padding for all sections */
+                margin-bottom: 40px; /* Add bottom margin to separate sections clearly */
             }
-        
-            /* Adjust the layout of the home section to stack elements vertically */
+
             #home {
-                flex-direction: column; /* Stack the text and image vertically */
-                align-items: center; /* Center-align items */
+                padding-top: 60px; /* Add more padding at the top to compensate for fixed nav */
             }
+
             #home .headshot {
-                max-width: 90%; /* Allow the image to take up to 90% of the screen width */
-                margin-top: 20px; /* Add some space above the image when stacked */
+                max-width: 75%; /* Adjust the max-width to give more space */
+                margin-top: 20px; /* Ensure there is space between the text and the image */
             }
         
             #home .intro-text, #home .headshot {
